@@ -13,14 +13,17 @@ function setup() {
   bullet2.shapeColor = "white";
   bullet2speed = random(223,321);
   bullet2weight = random(30,52);
+  bullet2.velocityX = 10;
   bullet3 = createSprite(100, 300, 50, 50);
   bullet3.shapeColor = "white";
   bullet3speed = random(223,321);
   bullet3weight = random(30,52);
+  bullet3.velocityX = 10;
   bullet4 = createSprite(100, 400, 50, 50);
   bullet4.shapeColor = "white";
   bullet4speed = random(223,321);
   bullet4weight = random(30,52);
+  bullet4.velocityX = 10;
 
   wall1 = createSprite(1100,100,10,70);
   wall1thickness = random(22,83);
@@ -34,9 +37,11 @@ function setup() {
 }
 
 function draw() {
-  background(80,80,80); 
+  background(80,80,80);
   
-  if(collision(bullet1,wall1)){
+  console.log(wall1damage);
+  
+  if(collision(bullet1,wall1) === true){
 
     wall1damage = 0.5*bullet1weight*bullet1speed*bullet1speed/(wall1thickness*wall1thickness*wall1thickness);
     wall1.velocityX = 0;
@@ -52,6 +57,63 @@ function draw() {
   if(wall1damage < 10){
 
     bullet1.shapeColor = "green";
+
+  }
+
+  if(collision(bullet2,wall2) === true){
+
+    wall2damage = 0.5*bullet2weight*bullet2speed*bullet2speed/(wall2thickness*wall2thickness*wall2thickness);
+    wall2.velocityX = 0;
+
+  } 
+  
+  if(wall2damage > 10){
+
+    bullet2.shapeColor = "red";
+
+  }
+
+  if(wall2damage < 10){
+
+    bullet2.shapeColor = "green";
+
+  }
+
+  if(collision(bullet3,wall3) === true){
+
+    wall3damage = 0.5*bullet3weight*bullet3speed*bullet3speed/(wall3thickness*wall3thickness*wall3thickness);
+    wall3.velocityX = 0;
+
+  } 
+  
+  if(wall3damage > 10){
+
+    bullet3.shapeColor = "red";
+
+  }
+
+  if(wall3damage < 10){
+
+    bullet3.shapeColor = "green";
+
+  }
+
+  if(collision(bullet4,wall4) === true){
+
+    wall4damage = 0.5*bullet4weight*bullet4speed*bullet4speed/(wall4thickness*wall4thickness*wall4thickness);
+    wall4.velocityX = 0;
+
+  } 
+  
+  if(wall4damage > 10){
+
+    bullet4.shapeColor = "red";
+
+  }
+
+  if(wall4damage < 10){
+
+    bullet4.shapeColor = "green";
 
   }
 
