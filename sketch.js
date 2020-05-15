@@ -41,10 +41,11 @@ function draw() {
   
   console.log(wall1damage);
   
-  if(collision(bullet1,wall1) === true){
+  if(collision(bullet1,wall1)){
 
     wall1damage = 0.5*bullet1weight*bullet1speed*bullet1speed/(wall1thickness*wall1thickness*wall1thickness);
     wall1.velocityX = 0;
+    bullet1.velocityX = 0;
 
   } 
   
@@ -60,10 +61,11 @@ function draw() {
 
   }
 
-  if(collision(bullet2,wall2) === true){
+  if(collision(bullet2,wall2)){
 
     wall2damage = 0.5*bullet2weight*bullet2speed*bullet2speed/(wall2thickness*wall2thickness*wall2thickness);
     wall2.velocityX = 0;
+    bullet2.velocityX = 0;
 
   } 
   
@@ -79,10 +81,11 @@ function draw() {
 
   }
 
-  if(collision(bullet3,wall3) === true){
+  if(collision(bullet3,wall3)){
 
     wall3damage = 0.5*bullet3weight*bullet3speed*bullet3speed/(wall3thickness*wall3thickness*wall3thickness);
     wall3.velocityX = 0;
+    bullet3.velocityX = 0;
 
   } 
   
@@ -98,10 +101,11 @@ function draw() {
 
   }
 
-  if(collision(bullet4,wall4) === true){
+  if(collision(bullet4,wall4)){
 
     wall4damage = 0.5*bullet4weight*bullet4speed*bullet4speed/(wall4thickness*wall4thickness*wall4thickness);
     wall4.velocityX = 0;
+    bullet4.velocityX = 0;
 
   } 
   
