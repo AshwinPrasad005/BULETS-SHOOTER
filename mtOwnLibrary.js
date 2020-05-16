@@ -6,5 +6,5 @@ function collision(obj1,obj2){
        return true;
 
     }
-
+    return false;
 }
